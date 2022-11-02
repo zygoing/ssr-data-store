@@ -56,8 +56,24 @@ class ServerStore {
     };
 
     // 获取数据
-    getData = () => {
-        return this.dataStoreForNext;
+    getData = (keys: string | string[] | undefined) => {
+        let result = this.dataStoreForNext;
+        if (typeof keys === 'string') {
+            result = this.dataStoreForNext[keys];
+        } else if (keys instanceof Array) {
+            let tempStore: DataStorType = this.dataStoreForNext;
+            keys.map((key, index) => {
+                if (index === (keys.length - 1)) {
+                    result = tempStore[key];
+                } else {
+                    tempStore = tempStore[key];
+                }
+
+                return true;
+            });
+        }
+
+        return result;
     };
 }
 
