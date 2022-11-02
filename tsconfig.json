@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "module": "esnext",
+        "target": "esnext",
+        "noEmit": true,
+        "lib": [
+          "esnext",
+          "dom"
+        ],
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        },
+        "allowJs": false,
+        "isolatedModules": true,
+        "skipLibCheck": true,
+        "jsx": "preserve",
+        "esModuleInterop": true,
+        "experimentalDecorators": false,
+        "keyofStringsOnly": true,
+        "strict": true,
+        "noFallthroughCasesInSwitch": true,
+        "noUnusedLocals": true
+    },
+    "include": [
+        "src",
+        "*.ts"
+    ]
+}
